@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  vllm-server:
+    image: vllm/vllm-openai:latest
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - HUGGING_FACE_HUB_TOKEN=${HF_TOKEN:-}
+      - VLLM_WORKER_MULTIPROC_METHOD=spawn
+    volumes:
+      - ${MODEL_PATH:-/root/models}:/models
+      - ${HF_CACHE:-/root/.cache/huggingface}:/root/.cache/huggingface
+    ports:
+      - "${HOST_PORT:-8000}:8000"
+    command: >
+      --model ${MODEL_ID:-Qwen/Qwen2.5-72B-Instruct}
+      --served-model-name ${SERVED_NAME:-qwen2.5-72b}
+      --tensor-parallel-size ${TP_SIZE:-1}
+      --max-model-len ${MAX_LEN:-8192}
+      --gpu-memory-utilization ${GPU_MEM:-0.90}
+      --dtype ${DTYPE:-auto}
+      --trust-remote-code
+      --host 0.0.0.0
+      --port 8000
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s

@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  litellm:
+    image: ghcr.io/berriai/litellm:main-latest
+    ports:
+      - "${GATEWAY_PORT:-4000}:4000"
+    volumes:
+      - ./litellm-config.yaml:/app/config.yaml:ro
+    environment:
+      - VLLM_API_BASE=${VLLM_API_BASE:-http://host.docker.internal:8000/v1}
+      - VLLM_API_BASE_7B=${VLLM_API_BASE_7B:-http://host.docker.internal:8001/v1}
+      - VLLM_API_KEY=${VLLM_API_KEY:-none}
+      - BAILIAN_API_KEY=${BAILIAN_API_KEY}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - LITELLM_MASTER_KEY=${LITELLM_MASTER_KEY:-sk-supergpu}
+      - DATABASE_URL=${DATABASE_URL:-}
+    command: ["--config", "/app/config.yaml", "--port", "4000", "--detailed_debug"]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

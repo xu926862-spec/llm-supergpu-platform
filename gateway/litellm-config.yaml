@@ -1,0 +1,63 @@
+model_list:
+  # ── Local vLLM (AutoDL / self-hosted) ──────────────────────────────────────
+  - model_name: qwen2.5-72b
+    litellm_params:
+      model: openai/qwen2.5-72b
+      api_base: "${VLLM_API_BASE:-http://localhost:8000/v1}"
+      api_key: "${VLLM_API_KEY:-none}"
+
+  - model_name: qwen2.5-7b
+    litellm_params:
+      model: openai/qwen2.5-7b
+      api_base: "${VLLM_API_BASE_7B:-http://localhost:8001/v1}"
+      api_key: "${VLLM_API_KEY:-none}"
+
+  # ── Alibaba Bailian (百炼) ──────────────────────────────────────────────────
+  - model_name: qwen-plus
+    litellm_params:
+      model: openai/qwen-plus
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen-max
+    litellm_params:
+      model: openai/qwen-max
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen3-235b-a22b
+    litellm_params:
+      model: openai/qwen3-235b-a22b
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  # ── DeepSeek ───────────────────────────────────────────────────────────────
+  - model_name: deepseek-chat
+    litellm_params:
+      model: deepseek/deepseek-chat
+      api_key: "${DEEPSEEK_API_KEY}"
+
+  - model_name: deepseek-reasoner
+    litellm_params:
+      model: deepseek/deepseek-reasoner
+      api_key: "${DEEPSEEK_API_KEY}"
+
+  # ── Claude (via Anthropic) ─────────────────────────────────────────────────
+  - model_name: claude-sonnet
+    litellm_params:
+      model: claude-sonnet-4-6
+      api_key: "${ANTHROPIC_API_KEY}"
+
+litellm_settings:
+  drop_params: true
+  request_timeout: 600
+  num_retries: 3
+
+general_settings:
+  master_key: "${LITELLM_MASTER_KEY:-sk-supergpu}"
+  database_url: "${DATABASE_URL:-}"
+
+router_settings:
+  routing_strategy: least-busy
+  allowed_fails: 2
+  cooldown_time: 60
