@@ -1,37 +1,129 @@
 model_list:
-  # ── Local vLLM (AutoDL / self-hosted) ──────────────────────────────────────
-  - model_name: qwen2.5-72b
-    litellm_params:
-      model: openai/qwen2.5-72b
-      api_base: "${VLLM_API_BASE:-http://localhost:8000/v1}"
-      api_key: "${VLLM_API_KEY:-none}"
+  # ══════════════════════════════════════════════════════
+  #  VIRTUAL SUPER GPU — API Pool Edition
+  #  单入口 /v1，路由到所有可用模型，自动降级
+  # ══════════════════════════════════════════════════════
 
-  - model_name: qwen2.5-7b
+  # ── 旗舰模型（对外统一名称） ─────────────────────────────
+  - model_name: supergpu-flagship         # 最强，慢
     litellm_params:
-      model: openai/qwen2.5-7b
-      api_base: "${VLLM_API_BASE_7B:-http://localhost:8001/v1}"
-      api_key: "${VLLM_API_KEY:-none}"
+      model: openai/qwen3-235b-a22b
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
 
-  # ── Alibaba Bailian (百炼) ──────────────────────────────────────────────────
-  - model_name: qwen-plus
+  - model_name: supergpu-fast             # 快，免费
     litellm_params:
       model: openai/qwen-plus
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
-  - model_name: qwen-max
+  - model_name: supergpu-smart            # 推理增强
     litellm_params:
-      model: openai/qwen-max
+      model: openai/qwen3-32b
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
+  - model_name: supergpu-coder            # 代码专用
+    litellm_params:
+      model: openai/qwen2.5-coder-32b-instruct
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  # ── 百炼 Qwen3 系列（全免费额度）────────────────────────
   - model_name: qwen3-235b-a22b
     litellm_params:
       model: openai/qwen3-235b-a22b
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
-  # ── DeepSeek ───────────────────────────────────────────────────────────────
+  - model_name: qwen3-32b
+    litellm_params:
+      model: openai/qwen3-32b
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen3-14b
+    litellm_params:
+      model: openai/qwen3-14b
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen3-8b
+    litellm_params:
+      model: openai/qwen3-8b
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  # ── 百炼 Qwen2.5 系列 ────────────────────────────────
+  - model_name: qwen-max
+    litellm_params:
+      model: openai/qwen-max
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen-plus
+    litellm_params:
+      model: openai/qwen-plus
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen-turbo
+    litellm_params:
+      model: openai/qwen-turbo
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen2.5-72b-instruct
+    litellm_params:
+      model: openai/qwen2.5-72b-instruct
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen2.5-32b-instruct
+    litellm_params:
+      model: openai/qwen2.5-32b-instruct
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen2.5-14b-instruct
+    litellm_params:
+      model: openai/qwen2.5-14b-instruct
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen2.5-7b-instruct
+    litellm_params:
+      model: openai/qwen2.5-7b-instruct
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  # ── 百炼 Coder 系列 ──────────────────────────────────
+  - model_name: qwen2.5-coder-32b-instruct
+    litellm_params:
+      model: openai/qwen2.5-coder-32b-instruct
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen2.5-coder-7b-instruct
+    litellm_params:
+      model: openai/qwen2.5-coder-7b-instruct
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  # ── 百炼 Math / Long Context ─────────────────────────
+  - model_name: qwen2.5-math-72b-instruct
+    litellm_params:
+      model: openai/qwen2.5-math-72b-instruct
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  - model_name: qwen-long
+    litellm_params:
+      model: openai/qwen-long
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+
+  # ── DeepSeek ─────────────────────────────────────────
   - model_name: deepseek-chat
     litellm_params:
       model: deepseek/deepseek-chat
@@ -42,16 +134,52 @@ model_list:
       model: deepseek/deepseek-reasoner
       api_key: "${DEEPSEEK_API_KEY}"
 
-  # ── Claude (via Anthropic) ─────────────────────────────────────────────────
+  # ── Claude ───────────────────────────────────────────
   - model_name: claude-sonnet
     litellm_params:
       model: claude-sonnet-4-6
       api_key: "${ANTHROPIC_API_KEY}"
 
+  # ── 本地 vLLM（可选，租 GPU 时开） ───────────────────
+  - model_name: local-72b
+    litellm_params:
+      model: openai/qwen2.5-72b
+      api_base: "${VLLM_API_BASE:-http://localhost:8000/v1}"
+      api_key: "none"
+
+  # ══════════════════════════════════════════════════════
+  #  负载均衡组：同名多后端，自动轮转 + 失败切换
+  # ══════════════════════════════════════════════════════
+  - model_name: auto                      # 通用入口，自动最优
+    litellm_params:
+      model: openai/qwen-plus
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+      weight: 3
+
+  - model_name: auto
+    litellm_params:
+      model: openai/qwen3-32b
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api_key: "${BAILIAN_API_KEY}"
+      weight: 2
+
+  - model_name: auto
+    litellm_params:
+      model: deepseek/deepseek-chat
+      api_key: "${DEEPSEEK_API_KEY}"
+      weight: 1
+
 litellm_settings:
   drop_params: true
   request_timeout: 600
   num_retries: 3
+  fallbacks:
+    - auto: [qwen-plus, qwen3-32b, deepseek-chat, qwen-turbo]
+    - supergpu-flagship: [qwen3-235b-a22b, qwen-max, qwen3-32b]
+    - supergpu-fast: [qwen-plus, qwen-turbo, qwen3-8b]
+    - supergpu-smart: [qwen3-32b, qwen3-14b, deepseek-reasoner]
+    - supergpu-coder: [qwen2.5-coder-32b-instruct, qwen2.5-coder-7b-instruct]
 
 general_settings:
   master_key: "${LITELLM_MASTER_KEY:-sk-supergpu}"
@@ -60,4 +188,5 @@ general_settings:
 router_settings:
   routing_strategy: least-busy
   allowed_fails: 2
-  cooldown_time: 60
+  cooldown_time: 30
+  retry_after: 5
