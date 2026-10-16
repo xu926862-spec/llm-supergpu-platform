@@ -1,35 +1,30 @@
 model_list:
-  # ══════════════════════════════════════════════════════
-  #  VIRTUAL SUPER GPU — API Pool Edition
-  #  单入口 /v1，路由到所有可用模型，自动降级
-  # ══════════════════════════════════════════════════════
-
-  # ── 旗舰模型（对外统一名称） ─────────────────────────────
-  - model_name: supergpu-flagship         # 最强，慢
+  # --- Aliases (smart routing) ---
+  - model_name: supergpu-flagship
     litellm_params:
       model: openai/qwen3-235b-a22b
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
-  - model_name: supergpu-fast             # 快，免费
+  - model_name: supergpu-fast
     litellm_params:
       model: openai/qwen-plus
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
-  - model_name: supergpu-smart            # 推理增强
+  - model_name: supergpu-smart
     litellm_params:
       model: openai/qwen3-32b
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
-  - model_name: supergpu-coder            # 代码专用
+  - model_name: supergpu-coder
     litellm_params:
       model: openai/qwen2.5-coder-32b-instruct
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
-  # ── 百炼 Qwen3 系列（全免费额度）────────────────────────
+  # --- Bailian Qwen3 ---
   - model_name: qwen3-235b-a22b
     litellm_params:
       model: openai/qwen3-235b-a22b
@@ -54,7 +49,7 @@ model_list:
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
-  # ── 百炼 Qwen2.5 系列 ────────────────────────────────
+  # --- Bailian Qwen2.5 ---
   - model_name: qwen-max
     litellm_params:
       model: openai/qwen-max
@@ -97,7 +92,7 @@ model_list:
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
-  # ── 百炼 Coder 系列 ──────────────────────────────────
+  # --- Bailian Coder ---
   - model_name: qwen2.5-coder-32b-instruct
     litellm_params:
       model: openai/qwen2.5-coder-32b-instruct
@@ -110,7 +105,7 @@ model_list:
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
-  # ── 百炼 Math / Long Context ─────────────────────────
+  # --- Bailian Math / Long ---
   - model_name: qwen2.5-math-72b-instruct
     litellm_params:
       model: openai/qwen2.5-math-72b-instruct
@@ -123,7 +118,7 @@ model_list:
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
       api_key: "${BAILIAN_API_KEY}"
 
-  # ── DeepSeek ─────────────────────────────────────────
+  # --- DeepSeek ---
   - model_name: deepseek-chat
     litellm_params:
       model: deepseek/deepseek-chat
@@ -134,23 +129,21 @@ model_list:
       model: deepseek/deepseek-reasoner
       api_key: "${DEEPSEEK_API_KEY}"
 
-  # ── Claude ───────────────────────────────────────────
+  # --- Claude ---
   - model_name: claude-sonnet
     litellm_params:
       model: claude-sonnet-4-6
       api_key: "${ANTHROPIC_API_KEY}"
 
-  # ── 本地 vLLM（可选，租 GPU 时开） ───────────────────
+  # --- Local vLLM (optional, enable when GPU is rented) ---
   - model_name: local-72b
     litellm_params:
       model: openai/qwen2.5-72b
       api_base: "${VLLM_API_BASE:-http://localhost:8000/v1}"
       api_key: "none"
 
-  # ══════════════════════════════════════════════════════
-  #  负载均衡组：同名多后端，自动轮转 + 失败切换
-  # ══════════════════════════════════════════════════════
-  - model_name: auto                      # 通用入口，自动最优
+  # --- Auto group (load balance + failover) ---
+  - model_name: auto
     litellm_params:
       model: openai/qwen-plus
       api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
