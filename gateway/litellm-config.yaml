@@ -340,8 +340,7 @@ litellm_settings:
     - supergpu-smart: [qwen3-32b, qwen3-14b, deepseek-reasoner]
     - supergpu-coder: [qwen2.5-coder-32b-instruct, qwen2.5-coder-14b-instruct]
 
-general_settings:
-  master_key: "${LITELLM_MASTER_KEY:-sk-supergpu}"
+general_settings: {}
 
 router_settings:
   routing_strategy: least-busy
