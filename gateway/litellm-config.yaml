@@ -2,7 +2,7 @@ model_list:
   # --- Aliases ---
   - model_name: supergpu-flagship
     litellm_params:
-      model: openai/qwen3-235b-a22b
+      model: openai/qwen3.8-max
       api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       api_key: os.environ/BAILIAN_API_KEY
 
@@ -328,6 +328,338 @@ model_list:
       api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       api_key: os.environ/BAILIAN_API_KEY
       weight: 1
+
+  # --- New models (2025-2026) ---
+  - model_name: qwen3.5-397b-a17b
+    litellm_params:
+      model: openai/qwen3.5-397b-a17b
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.5-122b-a10b
+    litellm_params:
+      model: openai/qwen3.5-122b-a10b
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.5-35b-a3b
+    litellm_params:
+      model: openai/qwen3.5-35b-a3b
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.5-27b
+    litellm_params:
+      model: openai/qwen3.5-27b
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.5-plus
+    litellm_params:
+      model: openai/qwen3.5-plus
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.5-plus-2026-02-15
+    litellm_params:
+      model: openai/qwen3.5-plus-2026-02-15
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.5-plus-2026-04-20
+    litellm_params:
+      model: openai/qwen3.5-plus-2026-04-20
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.5-flash
+    litellm_params:
+      model: openai/qwen3.5-flash
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.5-flash-2026-02-23
+    litellm_params:
+      model: openai/qwen3.5-flash-2026-02-23
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.5-omni-plus
+    litellm_params:
+      model: openai/qwen3.5-omni-plus
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.5-omni-flash
+    litellm_params:
+      model: openai/qwen3.5-omni-flash
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.6-27b
+    litellm_params:
+      model: openai/qwen3.6-27b
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.6-35b-a3b
+    litellm_params:
+      model: openai/qwen3.6-35b-a3b
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.6-plus
+    litellm_params:
+      model: openai/qwen3.6-plus
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.6-plus-2026-04-02
+    litellm_params:
+      model: openai/qwen3.6-plus-2026-04-02
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.6-flash
+    litellm_params:
+      model: openai/qwen3.6-flash
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.6-flash-2026-04-16
+    litellm_params:
+      model: openai/qwen3.6-flash-2026-04-16
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.7-max
+    litellm_params:
+      model: openai/qwen3.7-max
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.7-max-preview
+    litellm_params:
+      model: openai/qwen3.7-max-preview
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.7-max-2026-05-17
+    litellm_params:
+      model: openai/qwen3.7-max-2026-05-17
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.7-max-2026-06-08
+    litellm_params:
+      model: openai/qwen3.7-max-2026-06-08
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.7-plus
+    litellm_params:
+      model: openai/qwen3.7-plus
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.7-plus-2026-05-26
+    litellm_params:
+      model: openai/qwen3.7-plus-2026-05-26
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.7-flash
+    litellm_params:
+      model: openai/qwen3.7-flash
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.7-flash-2026-07-15
+    litellm_params:
+      model: openai/qwen3.7-flash-2026-07-15
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.8-max
+    litellm_params:
+      model: openai/qwen3.8-max
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.8-max-0902
+    litellm_params:
+      model: openai/qwen3.8-max-0902
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.8-2.4t-a95b
+    litellm_params:
+      model: openai/qwen3.8-2.4t-a95b
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.8-27b
+    litellm_params:
+      model: openai/qwen3.8-27b
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.8-flash
+    litellm_params:
+      model: openai/qwen3.8-flash
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3.8-omni-flash
+    litellm_params:
+      model: openai/qwen3.8-omni-flash
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen-flash
+    litellm_params:
+      model: openai/qwen-flash
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen-flash-character
+    litellm_params:
+      model: openai/qwen-flash-character
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen-plus-latest
+    litellm_params:
+      model: openai/qwen-plus-latest
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen-plus-character
+    litellm_params:
+      model: openai/qwen-plus-character
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3-coder-flash
+    litellm_params:
+      model: openai/qwen3-coder-flash
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3-omni-flash
+    litellm_params:
+      model: openai/qwen3-omni-flash
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen3-vl-plus
+    litellm_params:
+      model: openai/qwen3-vl-plus
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen-plus-2025-01-25
+    litellm_params:
+      model: openai/qwen-plus-2025-01-25
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen-plus-2025-04-28
+    litellm_params:
+      model: openai/qwen-plus-2025-04-28
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen-plus-2025-07-14
+    litellm_params:
+      model: openai/qwen-plus-2025-07-14
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwen-plus-2025-12-01
+    litellm_params:
+      model: openai/qwen-plus-2025-12-01
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: qwq-plus-2025-03-05
+    litellm_params:
+      model: openai/qwq-plus-2025-03-05
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: deepseek-v4-pro
+    litellm_params:
+      model: openai/deepseek-v4-pro
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: deepseek-v4-pro-0813
+    litellm_params:
+      model: openai/deepseek-v4-pro-0813
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: deepseek-v4.1-flash
+    litellm_params:
+      model: openai/deepseek-v4.1-flash
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: deepseek-v4-flash-0731
+    litellm_params:
+      model: openai/deepseek-v4-flash-0731
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: glm-5.3-prime
+    litellm_params:
+      model: openai/glm-5.3-prime
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: glm-5.3
+    litellm_params:
+      model: openai/glm-5.3
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: glm-5.2
+    litellm_params:
+      model: openai/glm-5.2
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: glm-5.2-fast-preview
+    litellm_params:
+      model: openai/glm-5.2-fast-preview
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: glm-5.1
+    litellm_params:
+      model: openai/glm-5.1
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: kimi-k3
+    litellm_params:
+      model: openai/kimi-k3
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: kimi-k2.7-code
+    litellm_params:
+      model: openai/kimi-k2.7-code
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
+  - model_name: ccai-pro
+    litellm_params:
+      model: openai/ccai-pro
+      api_base: https://ws-w375mhc5tx7lztoq.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+      api_key: os.environ/BAILIAN_API_KEY
+
 
 litellm_settings:
   drop_params: true
